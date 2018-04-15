@@ -1,0 +1,134 @@
+help
+Commands may be abbreviated.  Commands are:
+
+!		dir		mdelete		qc		site
+$		disconnect	mdir		sendport	size
+account		exit		mget		put		status
+append		form		mkdir		pwd		struct
+ascii		get		mls		quit		system
+bell		glob		mode		quote		sunique
+binary		hash		modtime		recv		tenex
+bye		help		mput		reget		tick
+case		idle		newer		rstatus		trace
+cd		image		nmap		rhelp		type
+cdup		ipany		nlist		rename		user
+chmod		ipv4		ntrans		reset		umask
+close		ipv6		open		restart		verbose
+cr		lcd		prompt		rmdir		?
+delete		ls		passive		runique
+debug		macdef		proxy		send
+ftp> 
+
+
+
+endres hauser
+
+backup      boot        certmgmt    close       connect     dhcpserver  
+display     exit        file        flashdrv    help        info        
+kill        newpass     ping        provision   python      quit        
+reconnect   revert      send        set         show        smscell     
+status      telnet      vpn         watchport   who         ?    
+
+backup 
+
+syntax: backup [options]
+
+options:
+
+    to = (server ip)[:filename] {stores config file to tftp server}
+    from = (server ip):[filename] {restores config file from tftp server}
+    {note the default backup filename is config.rci}
+
+    print {prints the config}
+    passwords {includes encrypted passwords and keys}
+    differential {differential backup relative to device defaults}
+
+For the "to" and "from"options, a local file for (filename) may be
+selected by specifying "local" as the (server ip) value.
+
+Example:  backup to=local
+    Store config file in the local filesystem, default file config.rci.
+Example:  backup to=local:backup.cfg
+    Store config file in the local filesystem, file backup.cfg.
+Example:  backup to=local:A/
+    Store config file on the A/ volume, default file config.rci.
+Example:  backup to=local:A/backup.cfg
+    Store config file on the A/ volume, file backup.cfg.
+
+Similar commands may be used with "from" to restore the config file.
+
+display 
+
+syntax: display [options...]
+
+accesscontrol  arp            buffers        carriers       dcloud         
+ddns           device         dnsserver      failover       gps            
+ia             ikesa          ikespd         ipsecspd       logging        
+memory         mobile         nat            netdevice      passthrough    
+pppstats       provisioning   proxyarp       route          sadb           
+scancloak      serial         smscell        sockets        spd            
+tcp            techsupport    udp            uptime         versions       
+vpn            vrrp
+
+display memory
+
+Memory Usage:
+
+ Main Memory :
+    Total Memory         : 33554432       
+    Used Memory          : 16123028       
+    Free Memory          : 17431404       
+
+ Network Memory :          Current     Maximum    
+    Allocated            : 265444      291996     
+    In use               : 174424      264248     
+    
+    display accesscontrol
+
+Access Control Status:
+
+ ACL (IP source filtering) feature:   disabled
+ Automatically allow local subnets:   disabled
+
+ Dynamic access control lists:
+
+   Number of dynamic ACL addresses:   5
+    Entry  Address          Entry  Address
+       1:  166.130.144.206     4:  166.216.138.41
+       2:  192.168.0.99        5:  166.216.138.42
+       3:  127.0.0.1
+
+   Number of dynamic ACL subnets:     3
+    Entry  Network          Mask
+       1:  166.130.144.206  255.255.255.255
+       2:  192.168.0.0      255.255.255.0
+       3:  127.0.0.1        255.255.255.255
+
+ Static access control lists:
+
+   Number of static ACL addresses:    0
+   Number of static ACL subnets:      0
+
+ Local protocol/port exceptions:
+   Number of local exceptions:        1
+    Entry  Protocol   Port   Description
+       1:    UDP        68   [BOOTP/DHCP client]
+
+ ACL Statistics:
+   IP datagrams examined:             0
+   IP datagrams accepted:             0
+   IP datagrams discarded:            0
+
+display versions
+
+Endress+Hauser NEMA X4:
+
+Component           Part-Number     Release-Tag
+
+BOOT                82001975        release_82001975_D
+POST                82001753        release_82001753_K (V1.1.3)
+Stored EOS          82001912        82001912_L (V2.17.6.1)
+Running EOS         82001912        82001912_L (V2.17.6.1)
+
+digiconnect2.4.3 (#266, Apr 19 2016, 06:00:15) 
+[GCC 3.2.2]WEB/python
